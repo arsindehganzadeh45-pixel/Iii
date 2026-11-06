@@ -109,7 +109,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
 
 <script>
 (function(){
-  var PANEL = {"id":"pnl_game_1","countryCode":"game","countryName":"سرور گیمینگ","flag":"🎮","city":"","ipType":"ipv4","dnsMode":"fixed","dnsCount":2,"totalGB":8000,"endpoint":"nexora.zytrenix.com:52902"};
+  var PANEL = {"id":"pnl_game_1","countryCode":"game","countryName":"سرور گیمینگ","flag":"🎮","city":"","ipType":"ipv4","dnsMode":"fixed","dnsCount":2,"totalGB":500,"endpoint":"nexora.zytrenix.com:52902"};
   
   // Exact WireGuard values taken from 1-Game.conf
   var SERVER_PUBLIC_KEY = "YcveR12eOmJ89l08jj3VrGCWM4arxMYqX2/cCNVd3CA=";
@@ -229,7 +229,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function updateStatus() {
-    var total = Number(PANEL.totalGB)||8000;
+    var total = Number(PANEL.totalGB)||500;
     var used = Math.max(0, Number(CONSUMED)||0);
     var rem = Math.max(0, total - used);
     var act = CONFIGS.filter(isActive).length;
@@ -404,7 +404,7 @@ textarea{min-height:70px;font-family:monospace;font-size:0.75rem;direction:ltr;t
   }
 
   function createConfig() {
-    var total = Number(PANEL.totalGB)||8000;
+    var total = Number(PANEL.totalGB)||500;
     var rem = Math.max(0, total - (Number(CONSUMED)||0));
     if (rem <= 0) { toast("⛔ حجم پنل تمام شده"); return; }
     var days = parseInt(document.getElementById("cfgDays").value,10)||30;
